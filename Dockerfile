@@ -2,7 +2,7 @@ FROM maven:3.6.3-openjdk-8
 COPY . /dist 
 RUN cd /dist && mvn clean install 
 WORKDIR /dist/ 
-CMD sleep 150 && mvn sonar:sonar 
--Dsonar.host.url=http://sonar-server:9030  
--Dsonar.language=java -Dsonar.login=admin 
--Dsonar.password=admin -Dsonar. projectKey=sonarbackend
+CMD sleep 150 && mvn sonar:sonar \
+  -Dsonar.projectKey=task4 \
+  -Dsonar.host.url=http://10.11.0.164:9017 \
+  -Dsonar.login=1fb3e5c2e0b3ff8f4e72fefda68c0bf7f835b1f5
